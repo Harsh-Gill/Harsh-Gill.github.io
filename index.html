@@ -1,245 +1,188 @@
-<!DOCTYPE html>
-
-<html lang="en">
-
-<head>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+<!DOCTYPE html><html lang="en" class="scroll-smooth"><head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Groky Chan - Portfolio</title>
+    <title>Harsh - Python Developer Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         primary: '#5D5CDE',
-                        dark: '#181818'
+                        secondary: '#8B7BDE',
                     },
                     animation: {
-                        'gradient': 'gradient 6s ease infinite',
-                        'float': 'float 3s ease-in-out infinite',
-                        'fadeInUp': 'fadeInUp 0.6s ease-out forwards'
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'fade-in': 'fadeIn 1s ease-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(50px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(93, 92, 222, 0.3)' },
+                            '100%': { boxShadow: '0 0 30px rgba(93, 92, 222, 0.6)' }
+                        }
                     }
                 }
             }
         }
     </script>
     <style>
-        @keyframes gradient {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .animate-fadeInUp {
-            opacity: 0;
-            animation: fadeInUp 0.6s ease-out forwards;
-        }
         .gradient-bg {
-            background: linear-gradient(-45deg, #5D5CDE, #7C4DFF, #651FFF, #3F51B5);
-            background-size: 400% 400%;
-            animation: gradient 6s ease infinite;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
-        .project-card {
-            transition: all 0.3s ease;
-            transform: translateY(0);
+        .tech-pattern {
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(93, 92, 222, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(139, 123, 222, 0.1) 0%, transparent 50%);
         }
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(93, 92, 222, 0.2);
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        .tech-badge {
-            transition: all 0.3s ease;
+        .text-gradient {
+            background: linear-gradient(135deg, #5D5CDE, #8B7BDE);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        .tech-badge:hover {
-            transform: scale(1.05);
-            background-color: #5D5CDE;
-            color: white;
+        .skill-bar {
+            position: relative;
+            overflow: hidden;
+        }
+        .skill-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+        .skill-bar:hover::before {
+            left: 100%;
         }
     </style>
-</head>
-<body class="bg-white dark:bg-dark text-gray-900 dark:text-white transition-colors duration-300">
+<script src="https://puc.poecdn.net/authenticated_preview_page/syncedState.bd4eeeb8e8e02052ee92.js"></script></head>
+<body class="bg-gray-50 text-gray-800">
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white/80 dark:bg-dark/80 backdrop-blur-md z-50 border-b border-gray-200 dark:border-gray-700">
-        <div class="container mx-auto px-6 py-4">
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
-                <div class="text-2xl font-bold text-primary">Groky Chan</div>
+                <div class="text-2xl font-bold text-gradient">Harsh</div>
                 <div class="hidden md:flex space-x-8">
                     <a href="#home" class="hover:text-primary transition-colors">Home</a>
                     <a href="#about" class="hover:text-primary transition-colors">About</a>
-                    <a href="#projects" class="hover:text-primary transition-colors">Projects</a>
                     <a href="#skills" class="hover:text-primary transition-colors">Skills</a>
+                    <a href="#projects" class="hover:text-primary transition-colors">Projects</a>
                     <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
                 </div>
-                <button id="mobile-menu" class="md:hidden">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
+                <button class="md:hidden text-2xl">
+                    <i class="fas fa-bars"></i>
                 </button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center gradient-bg relative overflow-hidden">
-        <div class="absolute inset-0 opacity-20">
-            <canvas id="heroCanvas" class="w-full h-full"></canvas>
+    <section id="home" class="min-h-screen flex items-center justify-center tech-pattern relative overflow-hidden">
+        <!-- Floating geometric shapes -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-20 w-20 h-20 bg-primary/20 rounded-full animate-float"></div>
+            <div class="absolute top-40 right-32 w-16 h-16 bg-secondary/20 rotate-45 animate-bounce-slow"></div>
+            <div class="absolute bottom-32 left-1/4 w-12 h-12 bg-primary/30 transform rotate-12 animate-pulse-slow"></div>
+            <div class="absolute bottom-20 right-20 w-24 h-24 border-4 border-secondary/30 rounded-full animate-float" style="animation-delay: 1s;"></div>
         </div>
-        <div class="text-center text-white z-10 animate-fadeInUp">
-            <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-float">
-                Hi, I'm <span class="text-yellow-300">Groky Chan</span>
+        
+        <div class="text-center z-10 animate-fade-in">
+            <div class="mb-8">
+                <div class="w-32 h-32 mx-auto mb-6 relative">
+                    <div class="w-full h-full bg-gradient-to-br from-primary to-secondary rounded-full animate-glow"></div>
+                    <div class="absolute inset-2 bg-white rounded-full flex items-center justify-center">
+                        <i class="fas fa-code text-4xl text-primary"></i>
+                    </div>
+                </div>
+            </div>
+            <h1 class="text-6xl md:text-8xl font-bold mb-4">
+                <span class="text-gradient">Harsh</span>
             </h1>
-            <p class="text-xl md:text-2xl mb-8 opacity-90">
-                15-year-old Developer from Hong Kong
+            <h2 class="text-2xl md:text-3xl text-gray-600 mb-6">Python Developer &amp; Data Enthusiast</h2>
+            <p class="text-lg text-gray-500 mb-8 max-w-2xl mx-auto">
+                From Hong Kong, passionate about finding patterns in data and building innovative solutions
             </p>
-            <p class="text-lg md:text-xl mb-12 opacity-80 max-w-2xl mx-auto">
-                Creating AMAZING GAMES AND WEBSITES with Python &amp; Web Technologies
-            </p>
-            <a href="#projects" class="inline-block bg-white text-primary px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
-                View My Work
-            </a>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full transition-all transform hover:scale-105 hover:shadow-lg">
+                    <i class="fas fa-briefcase mr-2"></i>Hire Me
+                </button>
+                <button onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})" class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full transition-all transform hover:scale-105">
+                    <i class="fas fa-eye mr-2"></i>View Work
+                </button>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-50 dark:bg-gray-900">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">About Me</h2>
-                <div class="w-24 h-1 bg-primary mx-auto"></div>
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 animate-slide-up">
+                <h2 class="text-4xl font-bold mb-4 text-gradient">About Me</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded"></div>
             </div>
-            <div class="max-w-4xl mx-auto">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <div class="w-64 h-64 mx-auto bg-gradient-to-br from-primary to-purple-600 rounded-full flex items-center justify-center text-white text-6xl font-bold">
-                            GC
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-slide-up">
+                    <div class="relative">
+                        <div class="w-full h-96 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl flex items-center justify-center">
+                            <i class="fas fa-user-tie text-8xl text-primary"></i>
                         </div>
-                    </div>
-                    <div class="space-y-6">
-                        <h3 class="text-2xl font-bold text-primary">Passionate Young Developer</h3>
-                        <p class="text-lg leading-relaxed">
-                            I'm a 15-year-old student from Hong Kong with a passion for creating innovative games and websites. 
-                            My journey in programming started with Python, and I've expanded into web development to bring my ideas to life.
-                        </p>
-                        <p class="text-lg leading-relaxed">
-                            I love combining creativity with technology to build projects that solve problems and entertain people. 
-                            Whether it's analyzing data, creating immersive games, or designing beautiful visualizations, 
-                            I'm always excited to take on new challenges.
-                        </p>
-                        <div class="flex flex-wrap gap-4">
-                            <span class="bg-primary text-white px-4 py-2 rounded-full">🎮 Game Developer</span>
-                            <span class="bg-primary text-white px-4 py-2 rounded-full">💻 Web Developer</span>
-                            <span class="bg-primary text-white px-4 py-2 rounded-full">📊 Data Analyst</span>
+                        <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-white rounded-full shadow-lg flex items-center justify-center">
+                            <i class="fas fa-map-marker-alt text-2xl text-primary"></i>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">My Projects</h2>
-                <div class="w-24 h-1 bg-primary mx-auto mb-4"></div>
-                <p class="text-xl text-gray-600 dark:text-gray-400">Check out some of my favorite projects</p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1: Titanic Analysis -->
-                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
-                    <div class="h-48 bg-gradient-to-br from-blue-500 to-cyan-600 relative overflow-hidden">
-                        <canvas id="titanicCanvas" class="w-full h-full"></canvas>
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="text-white text-center">
-                                <div class="text-4xl mb-2">🚢</div>
-                                <div class="text-lg font-semibold">Data Analysis</div>
-                            </div>
+                
+                <div class="space-y-6 animate-slide-up" style="animation-delay: 0.2s;">
+                    <h3 class="text-3xl font-bold text-gray-800">Hello! I'm Harsh</h3>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        I'm a passionate Python developer from Hong Kong with a deep love for data analysis. 
+                        I excel at finding meaningful patterns in complex datasets and transforming raw data 
+                        into actionable insights.
+                    </p>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Currently, I'm actively seeking new opportunities where I can apply my analytical 
+                        skills and programming expertise to solve real-world problems and drive business growth.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <div class="flex items-center bg-gray-100 px-4 py-2 rounded-full">
+                            <i class="fas fa-map-marker-alt text-primary mr-2"></i>
+                            <span>Hong Kong</span>
                         </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">Titanic Data Analysis</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4">
-                            Comprehensive analysis of the Titanic dataset using Python, pandas, and matplotlib. 
-                            Explored survival patterns and passenger demographics with beautiful visualizations.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-badge bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm">Python</span>
-                            <span class="tech-badge bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm">Pandas</span>
-                            <span class="tech-badge bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm">Matplotlib</span>
+                        <div class="flex items-center bg-gray-100 px-4 py-2 rounded-full">
+                            <i class="fas fa-briefcase text-primary mr-2"></i>
+                            <span>Available for Work</span>
                         </div>
-                        <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-purple-600 transition-colors">
-                            View Project
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Project 2: FPS Shooter Game -->
-                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
-                    <div class="h-48 bg-gradient-to-br from-red-500 to-orange-600 relative overflow-hidden">
-                        <canvas id="gameCanvas" class="w-full h-full"></canvas>
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="text-white text-center">
-                                <div class="text-4xl mb-2">🎮</div>
-                                <div class="text-lg font-semibold">FPS Game</div>
-                            </div>
+                        <div class="flex items-center bg-gray-100 px-4 py-2 rounded-full">
+                            <i class="fas fa-heart text-primary mr-2"></i>
+                            <span>Data Enthusiast</span>
                         </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">BEST SHOOTER EVER MANNNNN</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4">
-                            An exciting first-person shooter game developed with AI assistance. 
-                            Features dynamic gameplay, multiple levels, and smooth controls.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-badge bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm">Python</span>
-                            <span class="tech-badge bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm">Pygame</span>
-                            <span class="tech-badge bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm">AI Assisted</span>
-                        </div>
-                        <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-purple-600 transition-colors">
-                            View Project
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Project 3: Turtle Visualization -->
-                <div class="project-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
-                    <div class="h-48 bg-gradient-to-br from-green-500 to-teal-600 relative overflow-hidden">
-                        <canvas id="turtleCanvas" class="w-full h-full"></canvas>
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="text-white text-center">
-                                <div class="text-4xl mb-2">🐢</div>
-                                <div class="text-lg font-semibold">Visualization</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3">Cool Turtle Visualization</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4">
-                            Beautiful geometric patterns and animations created using Python's Turtle graphics. 
-                            Featuring fractals, spirals, and interactive visual effects.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="tech-badge bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm">Python</span>
-                            <span class="tech-badge bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm">Turtle</span>
-                            <span class="tech-badge bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm">Graphics</span>
-                        </div>
-                        <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-purple-600 transition-colors">
-                            View Project
-                        </button>
                     </div>
                 </div>
             </div>
@@ -247,296 +190,414 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gray-50 dark:bg-gray-900">
-        <div class="container mx-auto px-6">
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">Skills &amp; Technologies</h2>
-                <div class="w-24 h-1 bg-primary mx-auto"></div>
+                <h2 class="text-4xl font-bold mb-4 text-gradient">My Skills</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded"></div>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg">
-                    <div class="text-4xl mb-4">🐍</div>
-                    <h3 class="text-xl font-bold mb-2">Python</h3>
-                    <p class="text-gray-600 dark:text-gray-400">Data analysis, game development, and automation</p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 group">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fab fa-python text-2xl text-yellow-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Python</h3>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-3 skill-bar">
+                        <div class="bg-gradient-to-r from-yellow-400 to-yellow-600 h-3 rounded-full" style="width: 95%"></div>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">Advanced - Data Analysis, Web Development</p>
                 </div>
-                <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg">
-                    <div class="text-4xl mb-4">🌐</div>
-                    <h3 class="text-xl font-bold mb-2">Web Development</h3>
-                    <p class="text-gray-600 dark:text-gray-400">HTML, CSS, JavaScript, and modern frameworks</p>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 group">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-file-excel text-2xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Excel</h3>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-3 skill-bar">
+                        <div class="bg-gradient-to-r from-green-400 to-green-600 h-3 rounded-full" style="width: 90%"></div>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">Advanced - Data Modeling, Analytics</p>
                 </div>
-                <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg">
-                    <div class="text-4xl mb-4">📊</div>
-                    <h3 class="text-xl font-bold mb-2">Data Science</h3>
-                    <p class="text-gray-600 dark:text-gray-400">Pandas, NumPy, Matplotlib, and visualization</p>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 group">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-chart-bar text-2xl text-yellow-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">PowerBI</h3>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-3 skill-bar">
+                        <div class="bg-gradient-to-r from-yellow-400 to-yellow-600 h-3 rounded-full" style="width: 85%"></div>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">Proficient - Data Visualization</p>
                 </div>
-                <div class="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg">
-                    <div class="text-4xl mb-4">🎮</div>
-                    <h3 class="text-xl font-bold mb-2">Game Development</h3>
-                    <p class="text-gray-600 dark:text-gray-400">Pygame, game mechanics, and interactive experiences</p>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 group">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-code text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">C++</h3>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-3 skill-bar">
+                        <div class="bg-gradient-to-r from-blue-400 to-blue-600 h-3 rounded-full" style="width: 75%"></div>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">Intermediate - System Programming</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2 group">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-cog text-2xl text-cyan-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Go</h3>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-3 skill-bar">
+                        <div class="bg-gradient-to-r from-cyan-400 to-cyan-600 h-3 rounded-full" style="width: 70%"></div>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">Intermediate - Backend Development</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20">
-        <div class="container mx-auto px-6">
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">Let's Connect</h2>
-                <div class="w-24 h-1 bg-primary mx-auto mb-4"></div>
-                <p class="text-xl text-gray-600 dark:text-gray-400">Ready to create something amazing together?</p>
+                <h2 class="text-4xl font-bold mb-4 text-gradient">My Projects</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded"></div>
             </div>
-            <div class="max-w-2xl mx-auto">
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
-                    <div class="text-center space-y-6">
-                        <div class="text-6xl">👋</div>
-                        <h3 class="text-2xl font-bold">Get In Touch</h3>
-                        <p class="text-gray-600 dark:text-gray-400">
-                            I'm always excited to discuss new projects, creative ideas, or opportunities to learn and grow.
-                        </p>
-                        <div class="space-y-4">
-                            <div class="flex items-center justify-center space-x-3">
-                                <span class="text-primary">📧</span>
-                                <span>groky.chan@email.com</span>
-                            </div>
-                            <div class="flex items-center justify-center space-x-3">
-                                <span class="text-primary">📍</span>
-                                <span>Hong Kong</span>
-                            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white border-2 border-gray-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 group">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-chart-line text-6xl text-white opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">Stock Price Analysis</h3>
+                        <p class="text-gray-600 mb-4">Analyzing stock prices using Python and YFinance library to identify market trends and patterns.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Python</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">YFinance</span>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Data Analysis</span>
                         </div>
-                        <button class="bg-primary text-white px-8 py-3 rounded-full hover:bg-purple-600 transition-colors">
-                            Say Hello!
-                        </button>
+                    </div>
+                </div>
+                
+                <div class="bg-white border-2 border-gray-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 group">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center">
+                        <i class="fas fa-globe-americas text-6xl text-white opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold group-hover:text-primary transition-colors">Weather Data Analysis</h3>
+                            <a href="https://github.com/Harsh-Gill/Weather-Data-Analysis" target="_blank" class="text-gray-400 hover:text-primary transition-colors">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                        <p class="text-gray-600 mb-4">Using METEO API to collect and analyze weather data in Hong Kong to understand climate patterns and trends.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Python</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">METEO API</span>
+                            <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">Weather Data</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white border-2 border-gray-100 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 group">
+                    <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
+                        <i class="fas fa-brain text-6xl text-white opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">Stock Price Prediction</h3>
+                        <p class="text-gray-600 mb-4">Predicting stock prices using Python and Pandas with machine learning algorithms.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Python</span>
+                            <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">Pandas</span>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">ML</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Hobbies Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 text-gradient">My Hobbies</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded"></div>
+                <p class="text-gray-600 mt-4">What I do when I'm not coding</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center group">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform">
+                        <i class="fas fa-microscope text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Learning Science</h3>
+                    <p class="text-gray-600">Passionate about exploring scientific discoveries and understanding how the world works.</p>
+                </div>
+                
+                <div class="text-center group">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform">
+                        <i class="fas fa-paint-brush text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Drawing</h3>
+                    <p class="text-gray-600">Expressing creativity through art and visual design, from digital illustrations to traditional sketches.</p>
+                </div>
+                
+                <div class="text-center group">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform">
+                        <i class="fas fa-bicycle text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Riding Bicycles</h3>
+                    <p class="text-gray-600">Exploring Hong Kong's beautiful landscapes while staying active and enjoying the outdoors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="mb-16">
+                <h2 class="text-4xl font-bold mb-4 text-gradient">Let's Work Together</h2>
+                <div class="w-20 h-1 bg-primary mx-auto rounded mb-6"></div>
+                <p class="text-xl text-gray-600">I'm actively looking for new opportunities. Let's discuss how I can contribute to your team!</p>
+            </div>
+            
+            <div class="bg-gray-50 rounded-3xl p-12 mb-12">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="text-left">
+                        <h3 class="text-2xl font-bold mb-6">Ready to Hire?</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-map-marker-alt text-primary"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Location</p>
+                                    <p class="text-gray-600">Hong Kong</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-briefcase text-primary"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Availability</p>
+                                    <p class="text-gray-600">Available Immediately</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-clock text-primary"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Work Type</p>
+                                    <p class="text-gray-600">Full-time / Contract</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-left">
+                        <h3 class="text-2xl font-bold mb-6">What I Bring</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-primary mr-3"></i>
+                                <span>Advanced Python development skills</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-primary mr-3"></i>
+                                <span>Data analysis and pattern recognition</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-primary mr-3"></i>
+                                <span>Business intelligence with PowerBI</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-primary mr-3"></i>
+                                <span>Problem-solving mindset</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-primary mr-3"></i>
+                                <span>Continuous learning attitude</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="mailto:harshgill2954@gmail.com" class="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full transition-all transform hover:scale-105 hover:shadow-lg inline-flex items-center justify-center">
+                    <i class="fas fa-envelope mr-2"></i>
+                    Send Email
+                </a>
+                <a href="https://www.linkedin.com/in/harsh-gill-5b89641a3/" target="_blank" class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 rounded-full transition-all transform hover:scale-105 inline-flex items-center justify-center">
+                    <i class="fab fa-linkedin mr-2"></i>
+                    LinkedIn Profile
+                </a>
+                <button onclick="downloadResume()" class="bg-gray-800 hover:bg-gray-700 text-white px-8 py-4 rounded-full transition-all transform hover:scale-105 hover:shadow-lg inline-flex items-center justify-center">
+                    <i class="fas fa-download mr-2"></i>
+                    Download Resume
+                </button>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8">
-        <div class="container mx-auto px-6 text-center">
-            <p>© 2024 Groky Chan. Made with ❤️ and lots of code.</p>
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <div class="mb-8">
+                <h3 class="text-2xl font-bold mb-4">Harsh</h3>
+                <p class="text-gray-400">Python Developer &amp; Data Enthusiast from Hong Kong</p>
+            </div>
+            
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="https://www.linkedin.com/in/harsh-gill-5b89641a3/" target="_blank" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/Harsh-Gill" target="_blank" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:harshgill2954@gmail.com" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <p class="text-gray-400">© 2024 Harsh. All rights reserved. | Available for new opportunities</p>
+            </div>
         </div>
     </footer>
 
     <script>
-        // Dark mode detection
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.documentElement.classList.add('dark');
-        }
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-            if (event.matches) {
-                document.documentElement.classList.add('dark');
-            } else {
-                document.documentElement.classList.remove('dark');
-            }
-        });
-
-        // Smooth scrolling
+        // Smooth scrolling for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             });
         });
 
-        // Hero canvas animation
-        function createHeroAnimation() {
-            const canvas = document.getElementById('heroCanvas');
-            const ctx = canvas.getContext('2d');
-            
-            function resize() {
-                canvas.width = canvas.offsetWidth;
-                canvas.height = canvas.offsetHeight;
-            }
-            resize();
-            window.addEventListener('resize', resize);
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-            const particles = [];
-            for (let i = 0; i < 50; i++) {
-                particles.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height,
-                    vx: (Math.random() - 0.5) * 2,
-                    vy: (Math.random() - 0.5) * 2,
-                    size: Math.random() * 3 + 1
-                });
-            }
-
-            function animate() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                
-                particles.forEach(particle => {
-                    particle.x += particle.vx;
-                    particle.y += particle.vy;
-                    
-                    if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
-                    if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
-                    
-                    ctx.beginPath();
-                    ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-                    ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
-                    ctx.fill();
-                });
-                
-                requestAnimationFrame(animate);
-            }
-            animate();
-        }
-
-        // Project canvas animations
-        function createProjectAnimations() {
-            // Titanic canvas - data visualization effect
-            const titanicCanvas = document.getElementById('titanicCanvas');
-            const titanicCtx = titanicCanvas.getContext('2d');
-            titanicCanvas.width = titanicCanvas.offsetWidth;
-            titanicCanvas.height = titanicCanvas.offsetHeight;
-
-            function drawTitanicViz() {
-                titanicCtx.clearRect(0, 0, titanicCanvas.width, titanicCanvas.height);
-                
-                // Draw chart bars
-                const bars = 6;
-                const barWidth = titanicCanvas.width / bars * 0.6;
-                const spacing = titanicCanvas.width / bars * 0.4;
-                
-                for (let i = 0; i < bars; i++) {
-                    const height = Math.random() * titanicCanvas.height * 0.6 + 20;
-                    const x = i * (barWidth + spacing) + spacing/2;
-                    const y = titanicCanvas.height - height;
-                    
-                    titanicCtx.fillStyle = `rgba(255, 255, 255, ${0.3 + Math.random() * 0.4})`;
-                    titanicCtx.fillRect(x, y, barWidth, height);
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
                 }
-            }
-            setInterval(drawTitanicViz, 2000);
-            drawTitanicViz();
-
-            // Game canvas - game elements effect
-            const gameCanvas = document.getElementById('gameCanvas');
-            const gameCtx = gameCanvas.getContext('2d');
-            gameCanvas.width = gameCanvas.offsetWidth;
-            gameCanvas.height = gameCanvas.offsetHeight;
-
-            const targets = [];
-            for (let i = 0; i < 8; i++) {
-                targets.push({
-                    x: Math.random() * gameCanvas.width,
-                    y: Math.random() * gameCanvas.height,
-                    size: Math.random() * 10 + 5,
-                    vx: (Math.random() - 0.5) * 3,
-                    vy: (Math.random() - 0.5) * 3
-                });
-            }
-
-            function animateGame() {
-                gameCtx.clearRect(0, 0, gameCanvas.width, gameCanvas.height);
-                
-                targets.forEach(target => {
-                    target.x += target.vx;
-                    target.y += target.vy;
-                    
-                    if (target.x < 0 || target.x > gameCanvas.width) target.vx *= -1;
-                    if (target.y < 0 || target.y > gameCanvas.height) target.vy *= -1;
-                    
-                    gameCtx.beginPath();
-                    gameCtx.arc(target.x, target.y, target.size, 0, Math.PI * 2);
-                    gameCtx.strokeStyle = 'rgba(255, 255, 255, 0.7)';
-                    gameCtx.lineWidth = 2;
-                    gameCtx.stroke();
-                    
-                    // Crosshair
-                    gameCtx.beginPath();
-                    gameCtx.moveTo(target.x - target.size/2, target.y);
-                    gameCtx.lineTo(target.x + target.size/2, target.y);
-                    gameCtx.moveTo(target.x, target.y - target.size/2);
-                    gameCtx.lineTo(target.x, target.y + target.size/2);
-                    gameCtx.stroke();
-                });
-                
-                requestAnimationFrame(animateGame);
-            }
-            animateGame();
-
-            // Turtle canvas - geometric patterns
-            const turtleCanvas = document.getElementById('turtleCanvas');
-            const turtleCtx = turtleCanvas.getContext('2d');
-            turtleCanvas.width = turtleCanvas.offsetWidth;
-            turtleCanvas.height = turtleCanvas.offsetHeight;
-
-            let angle = 0;
-            function drawTurtlePattern() {
-                turtleCtx.clearRect(0, 0, turtleCanvas.width, turtleCanvas.height);
-                
-                const centerX = turtleCanvas.width / 2;
-                const centerY = turtleCanvas.height / 2;
-                const radius = Math.min(centerX, centerY) * 0.6;
-                
-                turtleCtx.strokeStyle = 'rgba(255, 255, 255, 0.8)';
-                turtleCtx.lineWidth = 2;
-                
-                for (let i = 0; i < 12; i++) {
-                    const a = (angle + i * 30) * Math.PI / 180;
-                    const x = centerX + Math.cos(a) * radius;
-                    const y = centerY + Math.sin(a) * radius;
-                    
-                    turtleCtx.beginPath();
-                    turtleCtx.moveTo(centerX, centerY);
-                    turtleCtx.lineTo(x, y);
-                    turtleCtx.stroke();
-                    
-                    // Draw small circles at the end
-                    turtleCtx.beginPath();
-                    turtleCtx.arc(x, y, 3, 0, Math.PI * 2);
-                    turtleCtx.fillStyle = 'rgba(255, 255, 255, 0.8)';
-                    turtleCtx.fill();
-                }
-                
-                angle += 1;
-                requestAnimationFrame(drawTurtlePattern);
-            }
-            drawTurtlePattern();
-        }
-
-        // Initialize animations when page loads
-        window.addEventListener('load', () => {
-            createHeroAnimation();
-            createProjectAnimations();
-            
-            // Fade in animation for elements
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate-fadeInUp');
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.project-card, section h2').forEach(el => {
-                observer.observe(el);
             });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
         });
 
         // Mobile menu toggle
-        document.getElementById('mobile-menu').addEventListener('click', function() {
-            // Add mobile menu functionality here if needed
-            console.log('Mobile menu clicked');
+        const mobileMenuBtn = document.querySelector('.md\\:hidden button');
+        const mobileMenu = document.querySelector('.md\\:flex');
+        
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                // Add mobile menu functionality here
+                console.log('Mobile menu clicked');
+            });
+        }
+
+        // Download resume function
+        function downloadResume() {
+            // Create a simple text resume
+            const resumeContent = `
+HARSH - PYTHON DEVELOPER
+========================
+
+CONTACT INFORMATION
+Email: harshgill2954@gmail.com
+LinkedIn: https://www.linkedin.com/in/harsh-gill-5b89641a3/
+Location: Hong Kong
+Status: Available for work
+
+ABOUT
+Python developer from Hong Kong with expertise in data analysis.
+Passionate about finding patterns in data and building solutions.
+
+SKILLS
+- Python (Advanced)
+- Excel (Advanced) 
+- PowerBI (Proficient)
+- C++ (Intermediate)
+- Go (Intermediate)
+
+PROJECTS
+1. Stock Price Analysis with Python and YFinance
+2. Global Warming Data Collection and Analysis
+3. Stock Price Prediction with Python and Pandas
+
+HOBBIES
+- Learning Science
+- Drawing
+- Riding Bicycles
+            `;
+
+            const blob = new Blob([resumeContent], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Harsh_Resume.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        // Add parallax effect to hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('#home');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Add typing effect to hero text (optional enhancement)
+        function typeWriter(element, text, speed = 50) {
+            let i = 0;
+            element.innerHTML = '';
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Initialize animations on page load
+        window.addEventListener('load', () => {
+            // Add any initialization code here
+            console.log('Portfolio loaded successfully!');
         });
     </script>
 
 
-</body>
-
-</html>
+</body></html>
